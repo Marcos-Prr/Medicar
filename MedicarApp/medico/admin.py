@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import medico
+from .models import Especialidade
+
+@admin.register(medico)
+class medicoAdmin(admin.ModelAdmin):
+    list_display =  ("nome","crm","especialidade")
+
+admin.site.register(Especialidade)
