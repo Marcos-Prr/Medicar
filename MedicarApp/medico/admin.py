@@ -1,7 +1,5 @@
 from django.contrib import admin
-
-from .models import medico
-from .models import Especialidade
+from .models import medico ,Especialidade
 
 @admin.register(medico)
 class medicoAdmin(admin.ModelAdmin):
