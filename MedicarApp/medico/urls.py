@@ -1,11 +1,8 @@
 from django.urls import path
-from django.urls.resolvers import URLPattern
+from .views import EspecialidadeViewSet, medicoViewSet
+from rest_framework.routers import SimpleRouter
 
-from . import views
+router = SimpleRouter()
+router.register('medicos',medicoViewSet)
+router.register('especialidades',EspecialidadeViewSet)
 
-app_name = "medico"
-
-urlpatterns = [
-    path("",views.medicoListView.as_view(),name="list"),
-    path("<slug:slug>/",views.medicoDetailView.as_view(),name="detail"),
-]
