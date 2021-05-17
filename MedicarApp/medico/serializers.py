@@ -23,7 +23,7 @@ class medicoSerializer(serializers.ModelSerializer):
 class EspecialidadeSerializer(serializers.ModelSerializer):
     
     class Meta:
-        models = Especialidade
+        model = Especialidade
         fields = (
             'id',
             'nome'
