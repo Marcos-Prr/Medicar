@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include , path
-from medico.urls import router
+from medico.urls import routerMedicos
+from consulta.urls import routerConsulta
+from agenda.urls import routerAgenda
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/',include('rest_framework.urls')),
-    path('api/v1/',include(router.urls)),
+    path('api/v1/',include(routerMedicos.urls)),
+    path('api/v1/',include(routerConsulta.urls)),
+    path('api/v1/',include(routerAgenda.urls)),
 ]
