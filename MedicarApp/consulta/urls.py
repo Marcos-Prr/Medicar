@@ -1,5 +1,5 @@
 from .views import consultaViewSet
-from rest_framework.routers import SimpleRouter 
+from rest_framework.routers import DefaultRouter, SimpleRouter 
 
-routerConsulta = SimpleRouter()
-routerConsulta.register('consultas',consultaViewSet)
+routerConsulta = DefaultRouter()
+routerConsulta.register('consultas',consultaViewSet , basename='consultas')
