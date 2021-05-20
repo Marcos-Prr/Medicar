@@ -18,10 +18,12 @@ from django.urls import include , path
 from medico.urls import routerMedicos
 from consulta.urls import routerConsulta
 from agenda.urls import routerAgenda
+from usuario.views import UserAPIView , AuthToken
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/',include('rest_framework.urls')),
+    path('login/', AuthToken.as_view()),
+    path('register/', UserAPIView.as_view()),
     path('api/v1/',include(routerMedicos.urls)),
     path('api/v1/',include(routerConsulta.urls)),
     path('api/v1/',include(routerAgenda.urls)),
