@@ -2,15 +2,16 @@
 from rest_framework import serializers
 from rest_framework import views
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from .models import consulta
 from agenda.models import Horario
 from .serializers import consultaDestroySerializer, consultaSerializer ,consultaPostSerializer
 
 class consultaViewSet(viewsets.ViewSet):
-
+    permission_classes=[IsAuthenticated]
     def list(self, request):    
-        queryset = consulta.objects.all()
+        queryset = consulta.objects.filter(usuario__username=request.user)
         serializer_class = consultaSerializer(queryset,many=True)
 
         return Response(serializer_class.data)
