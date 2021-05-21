@@ -28,7 +28,7 @@ class Agenda(models.Model):
                 pass
     
         validate_data()
-        if self.id ==None:
+        if self.id == None:
             validate_agenda_medico()
 
 class Horario(models.Model):
@@ -42,7 +42,7 @@ class Horario(models.Model):
     def clean(self):
         def validate_horario_value():
             try:
-                horario =Horario.objects.filter(agenda==self.agenda,hora==self.hora).get()
+                horario = Horario.objects.filter(agenda = self.agenda,hora = self.hora).get()
                 raise ValidationError({'hora':'Agenda já existe'})
             except Horario.DoesNotExist:
                 pass
