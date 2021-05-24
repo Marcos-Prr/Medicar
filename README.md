@@ -46,11 +46,13 @@ Após clonar o projeto, vá até a pasta do mesmo e execute os comandos:
 
 	
 ### Estrutura 
-O projeto foi dividido de forma que cada app seja uma etapa do gerenciamento das consultas, os app são :
-	- agenda
-	- consulta
-	- medico
-	- usuario
+O projeto foi dividido de forma que cada app seja uma etapa do gerenciamento das consultas, os app são:
+
+- agenda
+- consulta
+- medico
+- usuario
+
 ### Endpoints
 	Os endpoints estão de acordo com o proposto no desafio, utilizando token authentication onde for necessário e a interface administrativa com suas devidas funcionalidades.
 
