@@ -8,6 +8,7 @@ from .models import consulta
 from agenda.models import Horario
 from .serializers import consultaDestroySerializer, consultaSerializer ,consultaPostSerializer
 
+
 class consultaViewSet(viewsets.ViewSet):
     permission_classes=[IsAuthenticated]
     def list(self, request):    
@@ -16,11 +17,13 @@ class consultaViewSet(viewsets.ViewSet):
 
         return Response(serializer_class.data)
 
+
     def create(self,request):
         serializer = consultaPostSerializer(data=request.data,context={'request':request})
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
+        
 
     def destroy(self,request,pk):
         data={}

@@ -14,6 +14,8 @@ class AgendaViewSet(viewsets.ReadOnlyModelViewSet):
 
     horarios_livres = Horario.objects.disponivel().filter(agenda=OuterRef('pk'), marcado = False)
     queryset = Agenda.objects.disponivel().prefetch_related(Prefetch('horarios',queryset=Horario.objects.disponivel())).filter(Exists(horarios_livres))
+    
+
 class horarioViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Horario.objects.all()
     serializer_class = horarioSerializer

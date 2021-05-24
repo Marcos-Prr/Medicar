@@ -14,6 +14,7 @@ class horarioSerializer(serializers.ModelSerializer):
             'hora',
             'marcado'
         )
+        
 class agendaSerializer(serializers.ModelSerializer):
     
     medico = medicoSerializer()

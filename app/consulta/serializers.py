@@ -22,6 +22,7 @@ class consultaSerializer(serializers.ModelSerializer):
             'medico',
         )
 
+
 class consultaPostSerializer(serializers.Serializer):
     agenda_id = serializers.IntegerField()
     horario = serializers.TimeField()
@@ -37,6 +38,7 @@ class consultaPostSerializer(serializers.Serializer):
         validate_agenda(data)
         validate_horario(data)
         return data
+        
 
     def save(self):
         agenda_id = self.validated_data['agenda_id']

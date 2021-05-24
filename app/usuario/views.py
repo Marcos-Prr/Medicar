@@ -23,7 +23,6 @@ class UserAPIView(APIView):
         return Response(data=data)
 
 
-
 class AuthToken(ObtainAuthToken):
     def post(self,request,*args,**kwargs):
 

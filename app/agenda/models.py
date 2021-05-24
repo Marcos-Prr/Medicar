@@ -31,6 +31,7 @@ class Agenda(models.Model):
         if self.id == None:
             validate_agenda_medico()
 
+
 class Horario(models.Model):
     
     agenda = models.ForeignKey(Agenda,related_name='horarios', on_delete=models.CASCADE)
