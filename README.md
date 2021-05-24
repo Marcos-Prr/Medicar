@@ -16,7 +16,11 @@ Após clonar o projeto, entre na pasta  e execute os seguintes comandos:
       python -m venv venv
 	  
 	  #ativa o ambinente (Windows - Powershell)
-	  .\env\Scripts\activate.ps1
+	  .\venv\Scripts\activate.ps1
+	  
+	  #caso o Powershell nao execute o script  abra o powershell com opções de admin e execute o seguinte comando 
+	  set executionpolicy unrestricted
+	  #seleciona 'S',aperte enter e execute o script activate novamente
 	  
 	  #instale as dependências (Windows - Powershell)
 	  python -m pip install -r requirements.txt
@@ -29,10 +33,25 @@ Após clonar o projeto, entre na pasta  e execute os seguintes comandos:
 	
 
 #### Instruções executar via Docker
+Após clonar o projeto, vá até a pasta do mesmo e execute os comandos:
+	  #Construindo imagem com as dependencias de acordo com o arquivo requirements.txt
+	  docker build .
+
+	  #build das imagens que serão utilizadas
+	  docker-compose build
+
+	  #iniciando container
+	  docker-compose up app
+
+	
 ### Estrutura 
+O projeto foi dividido de forma que cada app seja uma etapa do gerenciamento das consultas, os app são :
+	agenda
+	consulta
+	medico
+	usuario
 ### Endpoints
-
-
+	Os endpoints estão de acordo com o proposto no desafio, utilizando token authentication onde for necessário e a interface administrativa com suas devidas funcionalidades.
 
 ## Frontend - Angular
 
