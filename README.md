@@ -33,7 +33,7 @@ Após clonar o projeto, entre na pasta  e execute os seguintes comandos:
 	  
 	
 
-#### Instruções executar via Docker
+#### Instruções para executar via Docker
 Após clonar o projeto, vá até a pasta do mesmo e execute os comandos:
 
 	  #Construindo imagem com as dependencias de acordo com o arquivo requirements.txt
