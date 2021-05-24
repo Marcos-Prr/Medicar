@@ -20,6 +20,7 @@ Após clonar o projeto, entre na pasta  e execute os seguintes comandos:
 	  
 	  #caso o Powershell nao execute o script  abra o powershell com opções de admin e execute o seguinte comando 
 	  set executionpolicy unrestricted
+
 	  #seleciona 'S',aperte enter e execute o script activate novamente
 	  
 	  #instale as dependências (Windows - Powershell)
@@ -46,10 +47,10 @@ Após clonar o projeto, vá até a pasta do mesmo e execute os comandos:
 	
 ### Estrutura 
 O projeto foi dividido de forma que cada app seja uma etapa do gerenciamento das consultas, os app são :
-	agenda
-	consulta
-	medico
-	usuario
+	  agenda
+	  consulta
+	  medico
+	  usuario
 ### Endpoints
 	Os endpoints estão de acordo com o proposto no desafio, utilizando token authentication onde for necessário e a interface administrativa com suas devidas funcionalidades.
 
