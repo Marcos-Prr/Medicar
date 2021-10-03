@@ -2,13 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-read',
-  template: `
-    <p>
-      read works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: 'read.component.html'
 })
 export class ReadComponent implements OnInit {
 
@@ -18,3 +12,4 @@ export class ReadComponent implements OnInit {
   }
 
 }
+
