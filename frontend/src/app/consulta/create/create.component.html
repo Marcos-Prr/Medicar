@@ -1,4 +1,56 @@
-<div>
-    teste criar consulta
+<mat-card class="mat-elevation-z0">
+    <mat-card-title>
+        <span>Nova Consulta</span>
+    </mat-card-title>
 
-</div>
+    <mat-card-content>
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>Especialidade</mat-label>
+                <mat-select>
+
+                    <mat-option>
+                        especialidade
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Médico</mat-label>
+                <mat-select>
+                    <mat-option>
+                        medico
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Data</mat-label>
+                <mat-select>
+                    <mat-option>
+                        agenda
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Hora</mat-label>
+                <mat-select>
+                    <mat-option>
+                        hora
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+
+        <div class="buttons">
+            <button mat-flat-button class="secondary">
+                Cancelar
+            </button>
+            <button>
+                Confirmar
+            </button>
+        </div>
+    </mat-card-content>
+
+</mat-card>
