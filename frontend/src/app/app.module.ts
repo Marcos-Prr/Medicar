@@ -6,18 +6,21 @@ import { MatButtonModule } from  '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { ReadComponent } from './consulta/read/read.component';
+import { CreateComponent } from './consulta/create/create.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReadComponent
+    ReadComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { ReadComponent } from './consulta/read/read.component';
     MatIconModule,
     MatCardModule,
     MatTableModule,
+    MatDialogModule,
     BrowserAnimationsModule
   ],
   providers: [],
