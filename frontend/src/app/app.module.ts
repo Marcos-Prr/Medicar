@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { ReadComponent } from './consulta/read/read.component';
 import { CreateComponent } from './consulta/create/create.component';
 import { DeleteComponent } from './consulta/delete/delete.component';
+import { LoginComponent } from './usuario/login/login.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DeleteComponent } from './consulta/delete/delete.component';
     AppComponent,
     ReadComponent,
     CreateComponent,
-    DeleteComponent
+    DeleteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
