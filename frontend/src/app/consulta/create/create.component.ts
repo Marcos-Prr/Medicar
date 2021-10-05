@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Agenda } from '../agenda';
 import { Create } from '../create';
 import { Horario } from '../horario';
@@ -26,13 +26,14 @@ export class CreateComponent implements OnInit {
     hora: ''
   }
 
-  constructor(private consultaService:ConsultaService,
-    ) { }
+  constructor(private consultaService: ConsultaService,
+    private dialog: MatDialogRef<CreateComponent>,
+  ) { }
 
   ngOnInit(): void {
     this.consultaService.getEspecialidades().subscribe(
-      (result) =>{
-        this.especialidades= result
+      (result) => {
+        this.especialidades = result
       }
     )
   }
@@ -49,20 +50,32 @@ export class CreateComponent implements OnInit {
       )
   }
 
-  getMedicoAgendas():void {
+  getMedicoAgendas(): void {
     this.agendas = []
     this.horarios = []
     this.consultaService.getAgendas(this.consultaForm.medico_id)
-                        .subscribe(
-                          (agendasMedico) => {
-                            this.agendas = agendasMedico
-                          }
-                        )
+      .subscribe(
+        (agendasMedico) => {
+          this.agendas = agendasMedico
+        }
+      )
   }
 
-  getAgendaHorarios():void{
-    const agendaSelecionada = this.agendas.find((agenda)=>agenda.id===this.consultaForm.agenda_id)
-    this.horarios = agendaSelecionada !== undefined? agendaSelecionada.horarios : [] 
+  getAgendaHorarios(): void {
+    const agendaSelecionada = this.agendas.find((agenda) => agenda.id === this.consultaForm.agenda_id)
+    this.horarios = agendaSelecionada !== undefined ? agendaSelecionada.horarios : []
+  }
+
+  createConsulta(): void {
+    const consulta: Create = {
+      agenda_id: this.consultaForm.agenda_id,
+      horario: this.consultaForm.hora.hora
+    }
+    this.consultaService.createConsulta(consulta).subscribe(
+      (consultaCriada) => {
+        this.dialog.close()
+      }
+    )
   }
 
 }

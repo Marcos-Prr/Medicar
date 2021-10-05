@@ -47,7 +47,7 @@
             <button mat-flat-button class="secondary">
                 Cancelar
             </button>
-            <button>
+            <button [disabled]="consultaForm.hora.length===0" mat-flat-button class="primary" (click)="createConsulta()">
                 Confirmar
             </button>
         </div>

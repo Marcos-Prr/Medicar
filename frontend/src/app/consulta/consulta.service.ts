@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Consulta } from './consulta';
+import { Create} from './create';
 import { Medico } from './medico';
 import { Agenda } from './agenda';
 import { Especialidade } from './especialidade';
@@ -56,5 +57,15 @@ export class ConsultaService {
                                             map((obj)=>obj),
                                             catchError((e)=>this.errorHandler(e))
                                           )
+  }
+
+  createConsulta(consulta:Create):Observable<Consulta>{
+    return this.httpCliente.post<Consulta>(`http://localhost:8000/api/v1/consultas/`, 
+                             consulta,
+                            {headers:{"Authorization":`Token ${this.authService.getToken()}` }})
+                            .pipe(
+                              map((obj)=>obj),
+                              catchError((e)=>this.errorHandler(e))
+                            )
   }
 }
