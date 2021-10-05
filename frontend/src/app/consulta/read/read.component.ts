@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultaService } from '../consulta.service';
 import { ConsultaItem } from '../consulta-item';
+
 import { Consulta } from '../consulta';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateComponent } from '../create/create.component';
+import { DeleteComponent } from '../delete/delete.component';
 
 @Component({
   selector: 'app-read',
@@ -44,6 +46,18 @@ export class ReadComponent implements OnInit {
     const dialog = this.matDialog.open(CreateComponent)
     dialog.afterClosed().subscribe(
       (result) => {
+        this.getConsultasList()
+      }
+    )
+  }
+
+  dialogDeletarConsulta(id:number){
+    const dialogRef = this.matDialog.open(DeleteComponent,
+      {
+        data:{consulta_id: id}
+      })
+    dialogRef.afterClosed().subscribe(
+      (result)=>{
         this.getConsultasList()
       }
     )

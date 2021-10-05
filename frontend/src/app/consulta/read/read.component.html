@@ -42,19 +42,19 @@
                 </ng-container>
                 <ng-container matColumnDef="data">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header>Data</th>
-                    <td mat-cell *matCellDef="let row">{{row.data}}</td>
+                    <td mat-cell *matCellDef="let row">{{ row.data }}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="hora">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header>Hora</th>
-                    <td mat-cell *matCellDef="let row">{{row.hora}}</td>
+                    <td mat-cell *matCellDef="let row">{{ row.hora }}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="action">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
                     <td mat-cell *matCellDef="let row">
                         <a>
-                            <button mat-flat-button class="secondary action">
+                            <button mat-flat-button class="secondary action" (click)="dialogDeletarConsulta(row.id)">
                                 <i class="material-icons">
                                     clear
                                 </i>
