@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Consulta } from './consulta';
+import { Medico } from './medico';
+import { Agenda } from './agenda';
+import { Especialidade } from './especialidade';
 import { AuthService } from 'src/app/authenticate/authenticate.service';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
@@ -21,16 +24,37 @@ export class ConsultaService {
   }
 
   list(): Observable<Consulta[]> {
-    let request = this.httpCliente.get<Consulta[]>(`http://localhost:8000/api/v1/consultas/`,
-      { headers: { "Authorization": `Token ${this.authService.getToken()}` } })
-      .pipe(
-        catchError((e) => this.errorHandler(e)))
-
-    console.log(request);
     return this.httpCliente.get<Consulta[]>(`http://localhost:8000/api/v1/consultas/`,
       { headers: { "Authorization": `Token ${this.authService.getToken()}` } })
       .pipe(
         map((obj) => obj),
         catchError((e) => this.errorHandler(e)))
+  }
+
+  getMedicosByEspecialidade(especialidadeId:number):Observable<Medico[]>{
+    return this.httpCliente.get<Medico[]>(`http://localhost:8000/api/v1/medicos?especialidade=${especialidadeId}`,
+                                          {headers:{"Authorization":`Token ${this.authService.getToken()}` }})
+                                          .pipe(
+                                            map((obj)=>obj),
+                                            catchError((e)=>this.errorHandler(e))
+                                          )
+  }
+
+  getEspecialidades():Observable<Especialidade[]>{
+    return this.httpCliente.get<Especialidade[]>(`http://localhost:8000/api/v1/especialidades/`,
+                                          {headers:{"Authorization":`Token ${this.authService.getToken()}` }})
+                                          .pipe(
+                                            map((obj)=>obj),
+                                            catchError((e)=>this.errorHandler(e))
+                                          )
+  }
+
+  getAgendas(medicoId:string):Observable<Agenda[]>{
+    return this.httpCliente.get<Agenda[]>(`http://localhost:8000/api/v1/agendas?medico=${medicoId}`,
+                                          {headers:{"Authorization":`Token ${this.authService.getToken()}` }})
+                                          .pipe(
+                                            map((obj)=>obj),
+                                            catchError((e)=>this.errorHandler(e))
+                                          )
   }
 }

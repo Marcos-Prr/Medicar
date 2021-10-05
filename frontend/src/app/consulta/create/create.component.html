@@ -7,37 +7,37 @@
         <form>
             <mat-form-field appearance="fill">
                 <mat-label>Especialidade</mat-label>
-                <mat-select>
+                <mat-select [(value)]="consultaForm.especialidade_id" (selectionChange)="getMedicosByEspecialidade()">
 
-                    <mat-option>
-                        especialidade
+                    <mat-option *ngFor="let especialidade of especialidades" [value]="especialidade.id">
+                        {{ especialidade.nome }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Médico</mat-label>
-                <mat-select>
-                    <mat-option>
-                        medico
+                <mat-select [disabled]="medicos.length===0" [(value)]="consultaForm.medico_id" (selectionChange)="getMedicoAgendas()">
+                    <mat-option  *ngFor="let medico of medicos" [value]="medico.id">
+                        {{ medico.nome }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Data</mat-label>
-                <mat-select>
-                    <mat-option>
-                        agenda
+                <mat-select [disabled]="agendas.length===0" [(value)]="consultaForm.agenda_id" (selectionChange)="getAgendaHorarios()">
+                    <mat-option *ngFor="let agenda of agendas" [value]="agenda.id">
+                        {{ agenda.dia }} 
                     </mat-option>
                 </mat-select>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Hora</mat-label>
-                <mat-select>
-                    <mat-option>
-                        hora
+                <mat-select  [disabled]="horarios.length===0" [(value)]="consultaForm.hora" >
+                    <mat-option *ngFor="let horario of horarios" [value]="horario">
+                        {{ horario.hora }}
                     </mat-option>
                 </mat-select>
             </mat-form-field>
