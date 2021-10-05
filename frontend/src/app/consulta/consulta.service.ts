@@ -68,4 +68,13 @@ export class ConsultaService {
                               catchError((e)=>this.errorHandler(e))
                             )
   }
+
+  deleteConsultaById(consulta_id:number):Observable<any>{
+    return this.httpCliente.delete(`http://localhost:8000/api/v1/consultas/${consulta_id}`,
+                            {headers:{"Authorization":`Token ${this.authService.getToken()}` }})
+                            .pipe(
+                              map((obj)=>obj),
+                              catchError((e)=>this.errorHandler(e))
+                            )
+  }
 }

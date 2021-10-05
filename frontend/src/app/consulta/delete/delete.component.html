@@ -1,4 +1,14 @@
-<div>
+<mat-card class="mat-elevation-z0">
+    <mat-card-subtitle>
+        <span>Deseja excluir essa consulta?</span>
+    </mat-card-subtitle>
 
-    teste delete 
-</div>
+    <div class="buttons">
+        <button mat-flat-button class="secondary"(click)="cancelClick()">
+            Cancelar
+        </button>
+        <button  mat-flat-button class="primary" (click)="deleteClick()">
+            Confirmar
+        </button>
+    </div>
+</mat-card>
