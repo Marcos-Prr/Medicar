@@ -17,6 +17,7 @@ import { ReadComponent } from './consulta/read/read.component';
 import { CreateComponent } from './consulta/create/create.component';
 import { DeleteComponent } from './consulta/delete/delete.component';
 import { LoginComponent } from './user/login/login.component';
+import { RegisterComponent } from './user/register/register.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { LoginComponent } from './user/login/login.component';
     ReadComponent,
     CreateComponent,
     DeleteComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
