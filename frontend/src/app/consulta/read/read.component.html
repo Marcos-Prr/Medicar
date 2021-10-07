@@ -2,8 +2,8 @@
     <div class="consulta-content-header">
         <!-- <app-simple-header></app-simple-header> -->
         <div>
-            <span style="margin-right: 15px;">Usuario</span>
-            <button mat-flat-button class="secondary action">
+            <span style="margin-right: 15px;">{{ userName }}</span>
+            <button mat-flat-button class="secondary action" (click)="logout()">
                 Desconectar
             </button>
         </div>
