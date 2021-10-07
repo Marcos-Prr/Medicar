@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { UserLogin } from '../user-login';
 import { AuthService } from 'src/app/authenticate/authenticate.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ import { AuthService } from 'src/app/authenticate/authenticate.service';
 export class LoginComponent implements OnInit {
 
   constructor(private userService:UserService,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -24,11 +26,19 @@ export class LoginComponent implements OnInit {
   inputType(): string{
     return this.hide ? 'password' : 'text';
   }
+  redirectConsultas():void{
+    this.router.navigate(['/consultas']);
+  }
+  
+  redirectRegistrar():void{
+    this.router.navigate(['/registrar']);
+  }
 
   login(){
     this.userService.login(this.userLogin).subscribe(
       response => {
-        this.authService.setUserInfo(response)
+        this.authService.setUserInfo(response);
+        this.redirectConsultas();
       }
     )
   }
