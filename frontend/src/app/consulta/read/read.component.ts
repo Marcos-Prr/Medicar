@@ -11,7 +11,8 @@ import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-read',
-  templateUrl: 'read.component.html'
+  templateUrl: 'read.component.html',
+  styleUrls:['read.component.css']
 })
 export class ReadComponent implements OnInit {
   userName: string = ""
