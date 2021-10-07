@@ -5,15 +5,7 @@
                 <input [(ngModel)]="userLogin.username" name="username" placeholder="Username" matInput>
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <input [(ngModel)]="userLogin.password" name="password" placeholder="Senha" matInput [type]="inputType()">
-                <button 
-                    mat-icon-button 
-                    matSuffix 
-                    (click)="hidePassword()" 
-                    [attr.aria-label]="'Hide password'" 
-                    [attr.aria-pressed]="hide">
-                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
+                <input [(ngModel)]="userLogin.password" name="password" placeholder="Senha" matInput type="password">
             </mat-form-field>
         </form>
         <div class="buttons">
