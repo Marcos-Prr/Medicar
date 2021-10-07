@@ -11,6 +11,16 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  hide = true;
+
+  hidePassword():void{
+    this.hide = !this.hide;
+  }
+
+  inputType(): string{
+    return this.hide ? 'password' : 'text';
+  }
+  
   userRegister: UserRegister =
     {
       first_name: "",
