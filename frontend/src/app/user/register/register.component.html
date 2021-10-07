@@ -1,0 +1,35 @@
+<mat-card class="mat-elevation-z0">
+    <mat-card-content>
+        <form>
+            <span>
+                <strong>Crie sua conta</strong>
+            </span>
+            <mat-form-field class="form-name">
+                <input name="first_name" required placeholder="Nome" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <input name="last_name" placeholder="Sobrenome" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <input name="email" placeholder="Email" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <input name="username" placeholder="Username" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <input name="password" placeholder="Senha" matInput>
+                <button mat-icon-button matSuffix>
+                </button>
+            </mat-form-field>
+
+        </form>
+        <div class="buttons">
+            <button mat-flat-button class="secondary action-button" (click)="redirectLogin()">
+                Cancelar
+            </button>
+            <button mat-flat-button class="primary action-button" (click)="createAccount()">
+                Criar conta
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>
