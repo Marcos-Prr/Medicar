@@ -8,10 +8,6 @@ mat-card-title {
   justify-content: space-between;
 }
 
-/* mat-card-title h3{
-    justify-content: flex-start;
-  } */
-
 mat-card-title button {
   justify-content: flex-end;
 }
@@ -26,6 +22,8 @@ mat-table {
   font-size: 12px;
   line-height: 14px;
   color: #a8a8a8;
+  text-transform: uppercase;
+  border-bottom: none;
 }
 
 th.mat-header-cell {
@@ -85,4 +83,16 @@ a {
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
 }
+.mat-cell{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+}
+td.mat-cell:first-of-type{
+  padding-left: 0px;
+}
 
+tr.mat-header-row {
+  height: 0px;
+}
