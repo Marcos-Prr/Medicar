@@ -6,7 +6,7 @@ html, body {
     box-sizing: border-box;
     outline: 0; 
 }
-body {  font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {  font-family: "Roboto", "Helvetica Neue", sans-serif; }
 
 .mat-form-field-wrapper {
     margin-top: -1.25em;
@@ -17,6 +17,7 @@ body {  font-family: Roboto, "Helvetica Neue", sans-serif; }
 .primary {
     background-color: #49B4BB;
     color: #fff;
+    border-radius: 4px;
 }
 
 .secondary {
@@ -27,4 +28,10 @@ body {  font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-button, .mat-icon-button, .mat-stroked-button {
     color: antiquewhite;
     background: transparent;
+}
+
+i img.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
