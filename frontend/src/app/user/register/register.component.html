@@ -1,20 +1,24 @@
 <mat-card class="mat-elevation-z0">
     <mat-card-content>
+        <i>
+            <img class="logo" src="../../../assets/Medicar_logo.png" />
+        </i>
         <form>
             <span>
                 <strong>Crie sua conta</strong>
             </span>
-            <mat-form-field class="form-name">
-                <input [(ngModel)]="userRegister.first_name" name="first_name" required placeholder="Nome" matInput>
+            <mat-form-field>
+                <input [(ngModel)]="userRegister.first_name" name="first_name" placeholder="Nome" matInput>
             </mat-form-field>
+
             <mat-form-field>
                 <input [(ngModel)]="userRegister.last_name" name="last_name" placeholder="Sobrenome" matInput>
             </mat-form-field>
             <mat-form-field>
-                <input [(ngModel)]="userRegister.email" name="email" placeholder="Email" matInput>
+                <input [(ngModel)]="userRegister.username" name="username" placeholder="Usuário" matInput>
             </mat-form-field>
             <mat-form-field>
-                <input [(ngModel)]="userRegister.username" name="username" placeholder="Username" matInput>
+                <input [(ngModel)]="userRegister.email" name="email" placeholder="Email" matInput>
             </mat-form-field>
             <mat-form-field>
                 <input [(ngModel)]="userRegister.password" name="password" placeholder="Senha" matInput
