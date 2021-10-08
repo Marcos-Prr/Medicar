@@ -6,6 +6,7 @@ import { Horario } from '../horario';
 import { ConsultaService } from '../consulta.service';
 import { Especialidade } from '../especialidade';
 import { Medico } from '../medico';
+import { ToastService } from 'src/app/toast/toast.service';
 
 @Component({
   selector: 'app-create',
@@ -28,6 +29,7 @@ export class CreateComponent implements OnInit {
 
   constructor(private consultaService: ConsultaService,
     private dialog: MatDialogRef<CreateComponent>,
+    private toast:ToastService
   ) { }
 
   ngOnInit(): void {
@@ -73,6 +75,7 @@ export class CreateComponent implements OnInit {
     }
     this.consultaService.createConsulta(consulta).subscribe(
       (consultaCriada) => {
+        this.toast.messageSuccess("Consulta criada com sucesso")
         this.dialog.close()
       }
     )

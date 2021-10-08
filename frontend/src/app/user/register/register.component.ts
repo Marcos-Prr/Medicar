@@ -3,6 +3,7 @@ import { UserRegister } from '../user-register';
 import { UserService } from '../user.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/toast/toast.service';
 
 @Component({
   selector: 'app-register',
@@ -11,16 +12,24 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  constructor(private router: Router,
+    private userService: UserService,
+    private toast: ToastService) { }
+
+  ngOnInit(): void {
+  }
+
+
   hide = true;
 
-  hidePassword():void{
+  hidePassword(): void {
     this.hide = !this.hide;
   }
 
-  inputType(): string{
+  inputType(): string {
     return this.hide ? 'password' : 'text';
   }
-  
+
   userRegister: UserRegister =
     {
       first_name: "",
@@ -30,32 +39,28 @@ export class RegisterComponent implements OnInit {
       username: ""
     };
 
-    createForm = new FormGroup(
-      {
-        first_name: new FormControl(this.userRegister.first_name,[Validators.required]),
-        last_name: new FormControl(this.userRegister.last_name,[Validators.required]),
-        email: new FormControl(this.userRegister.email,[Validators.required]),
-        username: new FormControl(this.userRegister.username,[Validators.required]),
-        password: new FormControl(this.userRegister.password,[Validators.required]),      
-      }
-    )
-  
-  redirectLogin():void{
+  createForm = new FormGroup(
+    {
+      first_name: new FormControl(this.userRegister.first_name, [Validators.required]),
+      last_name: new FormControl(this.userRegister.last_name, [Validators.required]),
+      email: new FormControl(this.userRegister.email, [Validators.required]),
+      username: new FormControl(this.userRegister.username, [Validators.required]),
+      password: new FormControl(this.userRegister.password, [Validators.required]),
+    }
+  )
+
+  redirectLogin(): void {
     this.router.navigate(['/login']);
   }
 
-  createAccount(){
+  createAccount() {
     this.userService.create(this.userRegister).subscribe(
       response => {
+        this.toast.messageSuccess("Usuario Criado com Sucesso");
         this.redirectLogin();
       }
     )
   }
 
-  constructor(private router:Router,
-    private userService:UserService) { }
-
-  ngOnInit(): void {
-  }
 
 }

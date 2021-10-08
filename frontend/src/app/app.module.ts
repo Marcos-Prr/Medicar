@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from  '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,6 +42,7 @@ import { RegisterComponent } from './user/register/register.component';
     MatTableModule,
     MatDialogModule,
     MatSelectModule,
+    MatSnackBarModule,
     BrowserAnimationsModule
   ],
   providers: [],

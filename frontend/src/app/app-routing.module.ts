@@ -6,6 +6,8 @@ import { RegisterComponent } from './user/register/register.component';
 import { AuthGuardService as AuthGuard } from './authenticate/authenticate-guard.service';
 
 const routes: Routes = [
+    
+    { path: "", redirectTo: "login", pathMatch: "full" },
     {
         path: "consultas",
         component: ReadComponent,
