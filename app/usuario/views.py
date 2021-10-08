@@ -32,5 +32,6 @@ class AuthToken(ObtainAuthToken):
         token, created = Token.objects.get_or_create(user=user)
 
         return Response({
+            'name': user.first_name + user.last_name,
             'token':token.key,
             })
