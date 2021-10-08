@@ -16,20 +16,27 @@ export class AuthService {
     }
 
     getToken(): String {
-        return this.userInfo.token
+        const token = localStorage.getItem('token')
+        return token !== null ? token : ''
     }
 
     setUserInfo(userInfo: UserAuth) {
-        this.userInfo = userInfo
+        localStorage.setItem('name', userInfo.name)
+        localStorage.setItem('token', userInfo.token)
     }
 
     getUserName(): string {
-        return this.userInfo.name
+        const name = localStorage.getItem('name')
+        return name!==null? name : ''
+    }
+
+    logout(): void{
+        localStorage.clear();
     }
 
     isAuthenticated(): boolean {
-        if (this.userInfo.token.length === 0)
-            return false
-        return true
+        if (localStorage.getItem('token') !== null)
+            return true
+        return false
     }
 }

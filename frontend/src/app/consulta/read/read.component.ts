@@ -31,6 +31,7 @@ export class ReadComponent implements OnInit {
 
 
   logout(): void {
+    this.authService.logout()
     this.router.navigate(['/login'])
   }
 
