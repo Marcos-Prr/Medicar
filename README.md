@@ -8,6 +8,9 @@ Para detalhes do Desafio Segue o link [link](https://github.com/Intmed-Software/
 
  - Python 3 
  - Docker (caso nao queira utilizar virtual env)
+ - Angular CLI (frontend)
+ - npm ou yarn (instalação de dependencias do front)
+
  
 #### Instruções para executar via virtual env
 Após clonar o projeto, entre na pasta  e execute os seguintes comandos:
@@ -59,4 +62,37 @@ Os endpoints estão de acordo com o proposto no desafio, utilizando token authen
 
 ## Frontend - Angular
 
-O frontend ainda está sendo feito.
+
+O frontend segue as especificações listadas neste [link](https://github.com/Intmed-Software/desafio/tree/master/frontend).
+
+## Instalando Angular CLI
+
+Abra seu terminal e execute o seguinte comando:
+- 	npm install @angular/cli
+
+### Instruções para executar local
+
+Após realizar o clone do projeto, entre na diretório"frontend/medicar*" e execute os comandos abaixo:
+
+    # yarn
+    yarn install
+    
+    # npm
+    npm install
+	
+	# Após baixar as dependências, execute o projeto
+	ng serve --o
+
+O front estará rodando na  porta **4200** e o backend na porta **8000** (porta padrão do Django).
+
+### Ações da aplicação
+
+A aplicação possui as seguintes Ações:
+- Login 
+- Visualizar consultas
+- Criar/excluir consultas
+- Registrar novo usuário
+
+
+O login do usuário só poderá ser utilizado o **username** .
+No registro de um novo usuário foram incluídos os campos de "Nome" e "Sobrenome" para serem apresentados na tela de visualizar consultas do usuário.
