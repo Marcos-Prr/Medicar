@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from  '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -38,6 +39,7 @@ import { RegisterComponent } from './user/register/register.component';
     MatFormFieldModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule,
     MatCardModule,
     MatTableModule,
     MatDialogModule,

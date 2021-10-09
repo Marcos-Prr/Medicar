@@ -13,6 +13,7 @@ export class ToastService {
     const snackBarRef = this.snackBar.open(textMsg, 'X', {
       duration: 5000,
       horizontalPosition: "center",
+      panelClass:[msgType]
     }
     )
     snackBarRef.onAction().subscribe(
@@ -21,12 +22,12 @@ export class ToastService {
   }
 
   messageSuccess(textMsg: string): void {
-    this.showMessage(textMsg, "msg-success")
+    this.showMessage(textMsg, "success-toast")
   }
   messageWarning(textMsg: string): void {
-    this.showMessage(textMsg, "msg-warning")
+    this.showMessage(textMsg, "warning-toast")
   }
   messageError(textMsg: string): void {
-    this.showMessage(textMsg, "msg-error")
+    this.showMessage(textMsg, "error-toast")
   }
 }
