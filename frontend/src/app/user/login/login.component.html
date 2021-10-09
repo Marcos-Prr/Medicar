@@ -4,10 +4,12 @@
             <img class="logo" src="../../../assets/Medicar_logo.png" />
         </i>
         <form>
-            <mat-form-field>
-                <input [(ngModel)]="userLogin.username" name="username" placeholder="Username" matInput>
+            <mat-form-field appearance="outline">
+                <mat-label>Usuário</mat-label>
+                <input [(ngModel)]="userLogin.username" name="username" placeholder="Usuário" matInput>
             </mat-form-field>
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
+                <mat-label>senha</mat-label>
                 <input [(ngModel)]="userLogin.password" name="password" placeholder="Senha" matInput type="password">
             </mat-form-field>
         </form>

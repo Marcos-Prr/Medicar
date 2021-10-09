@@ -1,8 +1,10 @@
 mat-card {
-  max-width: 600px;
-  margin: 2em auto;
+  height: 100%;
+  max-width: 627px;
+  margin: auto;
   text-align: center;
 }
+
 mat-card-title {
   display: flex;
   justify-content: space-between;
@@ -54,7 +56,6 @@ a {
 
 .full-width-table {
   width: 100%;
-  height: 100%;
 }
 
 .action {
@@ -71,25 +72,27 @@ a {
   height: 25px;
 }
 
-.mat-row:nth-child(even){
+.mat-row:nth-child(even) {
   background-color: transparent;
 }
-      
-.mat-row:nth-child(odd){
-  background-color: #F8F8F8;
+
+.mat-row:nth-child(odd) {
+  background-color: #f8f8f8;
 }
 
 .mat-row .mat-cell {
   border-bottom: 1px solid transparent;
   border-top: 1px solid transparent;
 }
-.mat-cell{
+
+.mat-cell {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
 }
-td.mat-cell:first-of-type{
+
+td.mat-cell:first-of-type {
   padding-left: 0px;
 }
 

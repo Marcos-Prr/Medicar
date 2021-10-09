@@ -1,37 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { 
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 0; 
+    outline: 0;
 }
-body {  font-family: "Roboto", "Helvetica Neue", sans-serif; }
+body {
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
 
 .mat-form-field-wrapper {
     margin-top: -1.25em;
     margin-bottom: -1.25em;
-
 }
 
 .primary {
-    background-color: #49B4BB;
+    background-color: #49b4bb;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .secondary {
-    color: #49B4BB;
+    color: #49b4bb;
     background-color: #fff;
 }
 
-.mat-button, .mat-icon-button, .mat-stroked-button {
+.mat-button,
+.mat-icon-button,
+.mat-stroked-button {
     color: antiquewhite;
     background: transparent;
 }
 
-i img.logo {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.success-toast {
+    background-color: #a5dc86;
+}
+
+.warning-toast {
+    background-color: #f8bb86;
+}
+
+.error-toast {
+    background-color: #f27474;
 }
