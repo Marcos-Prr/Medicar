@@ -19,12 +19,11 @@ export class UserService {
   
   errorHandler(e: any): Observable<any> {
     const codeStatus = e.status
-    console.log(codeStatus)
     if(codeStatus == 400){
-      this.toast.messageError("Credenciais fornecidas invalidas.");
-    }
-    else if(codeStatus == 500){
-      this.toast.messageError("Erro interno");
+      const error = e.error
+      const errorObject = Object.keys(error)[0]
+      const messageError= error[errorObject][0]
+      this.toast.messageWarning(`${messageError}`)
     }else{
       this.toast.messageError("Erro de comunicação");
     }
