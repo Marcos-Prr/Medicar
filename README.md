@@ -68,7 +68,7 @@ O frontend segue as especificações listadas neste [link](https://github.com/In
 ## Instalando Angular CLI
 
 Abra seu terminal e execute o seguinte comando:
-- 	npm install @angular/cli
+	npm install @angular/cli
 
 ### Instruções para executar local
 
@@ -93,6 +93,7 @@ A aplicação possui as seguintes Ações:
 - Criar/excluir consultas
 - Registrar novo usuário
 
+## OBS
 
-O login do usuário só poderá ser utilizado o **username** .
-No registro de um novo usuário foram incluídos os campos de "Nome" e "Sobrenome" para serem apresentados na tela de visualizar consultas do usuário.
+- O login do usuário só poderá ser utilizado o **username** .
+- No registro de um novo usuário foram incluídos os campos de "Nome" e "Sobrenome" para serem apresentados na tela de visualizar consultas do usuário.
