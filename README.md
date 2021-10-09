@@ -68,7 +68,8 @@ O frontend segue as especificações listadas neste [link](https://github.com/In
 ## Instalando Angular CLI
 
 Abra seu terminal e execute o seguinte comando:
-	npm install @angular/cli
+
+	 npm install @angular/cli
 
 ### Instruções para executar local
 
