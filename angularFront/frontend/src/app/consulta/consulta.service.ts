@@ -7,6 +7,7 @@ import { Agenda } from './agenda';
 import { Especialidade } from './especialidade';
 import { AuthService } from 'src/app/authenticate/authenticate.service';
 import { EMPTY, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { catchError, map } from 'rxjs/operators';
 import { ToastService } from '../toast/toast.service';
 
@@ -15,7 +16,6 @@ import { ToastService } from '../toast/toast.service';
 })
 export class ConsultaService {
 
-  private apiServer = "http://localhost:8000/api/v1/";
   constructor(private httpCliente: HttpClient,
     private authService: AuthService,
     private toast: ToastService) { }
@@ -37,7 +37,7 @@ export class ConsultaService {
   }
 
   list(): Observable<Consulta[]> {
-    return this.httpCliente.get<Consulta[]>(`http://localhost:8000/api/v1/consultas/`,
+    return this.httpCliente.get<Consulta[]>(`${environment.apiURL}/api/v1/consultas/`,
       { headers: { "Authorization": `Token ${this.authService.getToken()}` } })
       .pipe(
         map((obj) => obj),
@@ -45,7 +45,7 @@ export class ConsultaService {
   }
 
   getMedicosByEspecialidade(especialidadeId: number): Observable<Medico[]> {
-    return this.httpCliente.get<Medico[]>(`http://localhost:8000/api/v1/medicos?especialidade=${especialidadeId}`,
+    return this.httpCliente.get<Medico[]>(`${environment.apiURL}/api/v1/medicos?especialidade=${especialidadeId}`,
       { headers: { "Authorization": `Token ${this.authService.getToken()}` } })
       .pipe(
         map((obj) => obj),
@@ -54,7 +54,7 @@ export class ConsultaService {
   }
 
   getEspecialidades(): Observable<Especialidade[]> {
-    return this.httpCliente.get<Especialidade[]>(`http://localhost:8000/api/v1/especialidades/`,
+    return this.httpCliente.get<Especialidade[]>(`${environment.apiURL}/api/v1/especialidades/`,
       { headers: { "Authorization": `Token ${this.authService.getToken()}` } })
       .pipe(
         map((obj) => obj),
@@ -63,7 +63,7 @@ export class ConsultaService {
   }
 
   getAgendas(medicoId: string): Observable<Agenda[]> {
-    return this.httpCliente.get<Agenda[]>(`http://localhost:8000/api/v1/agendas?medico=${medicoId}`,
+    return this.httpCliente.get<Agenda[]>(`${environment.apiURL}/api/v1/agendas?medico=${medicoId}`,
       { headers: { "Authorization": `Token ${this.authService.getToken()}` } })
       .pipe(
         map((obj) => obj),
@@ -72,7 +72,7 @@ export class ConsultaService {
   }
 
   createConsulta(consulta: Create): Observable<Consulta> {
-    return this.httpCliente.post<Consulta>(`http://localhost:8000/api/v1/consultas/`,
+    return this.httpCliente.post<Consulta>(`${environment.apiURL}/api/v1/consultas/`,
       consulta,
       { headers: { "Authorization": `Token ${this.authService.getToken()}` } })
       .pipe(
@@ -82,7 +82,7 @@ export class ConsultaService {
   }
 
   deleteConsultaById(consulta_id: number): Observable<any> {
-    return this.httpCliente.delete(`http://localhost:8000/api/v1/consultas/${consulta_id}`,
+    return this.httpCliente.delete(`${environment.apiURL}/api/v1/consultas/${consulta_id}`,
       { headers: { "Authorization": `Token ${this.authService.getToken()}` } })
       .pipe(
         map((obj) => obj),

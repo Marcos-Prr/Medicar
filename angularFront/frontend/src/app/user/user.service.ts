@@ -5,6 +5,7 @@ import { UserLogin } from './user-login';
 import { ToastService } from '../toast/toast.service';
 import { UserAuth } from './user-auth';
 import { UserRegister } from './user-register';
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
@@ -32,14 +33,14 @@ export class UserService {
   }
 
   login(userCredentials: UserLogin): Observable<UserAuth> {
-    return this.httpCliente.post<UserAuth>(`http://localhost:8000/login/`, userCredentials).pipe(
+    return this.httpCliente.post<UserAuth>(`${environment.apiURL}/login/`, userCredentials).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     )
   }
 
   create(userInfo: UserRegister): Observable<any>{
-    return this.httpCliente.post<any>(`http://localhost:8000/register/`, userInfo).pipe(
+    return this.httpCliente.post<any>(`${environment.apiURL}/register/`, userInfo).pipe(
       map((obj)=> obj),
       catchError((e)=>this.errorHandler(e))
     )
