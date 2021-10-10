@@ -13,9 +13,9 @@ services:
             
     angular-service: 
         container_name: angularcontainer 
-        build: ./angularFront 
+        build: ./angularfront 
         volumes: 
-            - './angularFront:/usr/src/app' 
+            - './angularfront:/usr/src/app' 
         ports: 
             - '4200:4200'
         command: > 
