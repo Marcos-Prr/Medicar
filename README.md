@@ -53,6 +53,13 @@ Após clonar o projeto, entre na pasta  e execute os seguintes comandos:
 	   
 ### Instruções para executar front local (sem docker)
 
+## Instalando Angular CLI
+
+Abra seu terminal e execute o seguinte comando:
+
+	 npm install @angular/cli
+	 
+
 Após realizar o clone do projeto, entre na diretório"angularfront/frontend" e execute os comandos abaixo:
 
     # yarn
@@ -84,12 +91,6 @@ Os endpoints estão de acordo com o proposto no desafio, utilizando token authen
 
 O frontend segue as especificações listadas neste [link](https://github.com/Intmed-Software/desafio/tree/master/frontend).
 
-## Instalando Angular CLI
-
-Abra seu terminal e execute o seguinte comando:
-
-	 npm install @angular/cli
-	 
 ### Ações da aplicação
 
 A aplicação possui as seguintes Ações:
