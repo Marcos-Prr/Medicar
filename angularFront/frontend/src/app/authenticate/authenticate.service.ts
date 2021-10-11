@@ -6,11 +6,6 @@ import { UserAuth } from '../user/user-auth';
     providedIn: 'root'
 })
 export class AuthService {
-    private userInfo: UserAuth = {
-        name: "",
-        token: ""
-    };
-
     constructor() {
 
     }
