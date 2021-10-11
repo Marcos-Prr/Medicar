@@ -99,3 +99,7 @@ td.mat-cell:first-of-type {
 tr.mat-header-row {
   height: 0px;
 }
+
+.user-name{
+  color: #A8A8A8;
+}
