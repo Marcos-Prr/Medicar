@@ -53,7 +53,7 @@ Após clonar o projeto, entre na pasta  e execute os seguintes comandos:
 	   
 ### Instruções para executar front local (sem docker)
 
-## Instalando Angular CLI
+#### Instalando Angular CLI
 
 Abra seu terminal e execute o seguinte comando:
 
